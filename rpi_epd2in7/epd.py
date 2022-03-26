@@ -36,6 +36,11 @@ from .lut import LUT, QuickLUT
 import RPi.GPIO as GPIO
 from PIL import ImageChops
 
+try:
+    import RPi.GPIO as GPIO
+except ImportError:
+    import FakeRPi.GPIO as GPIO
+
 # Pin definition
 RST_PIN         = 17
 DC_PIN          = 25
