@@ -1,4 +1,4 @@
 Pillow>=2.6.1
 RPi.GPIO>=0.6.3
 spidev>=3.0
-git+https://github.com/sn4k3/FakeRP@master
+git+https://github.com/sn4k3/FakeRPi@master
