@@ -33,7 +33,6 @@ from __future__ import unicode_literals, division, absolute_import
 import time
 import spidev
 from .lut import LUT, QuickLUT
-import RPi.GPIO as GPIO
 from PIL import ImageChops
 
 try:
