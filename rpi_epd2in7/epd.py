@@ -31,14 +31,15 @@
 from __future__ import unicode_literals, division, absolute_import
 
 import time
-import spidev
 from .lut import LUT, QuickLUT
 from PIL import ImageChops
 
 try:
     import RPi.GPIO as GPIO
+    from spidev import *
 except ImportError:
     import FakeRPi.GPIO as GPIO
+    from .fakespi import *
 
 # Pin definition
 RST_PIN         = 17
@@ -118,7 +119,7 @@ class EPD(object):
         self._last_frame = None
         self._partial_refresh_count = 0
         self._init_performed = False
-        self.spi = spidev.SpiDev(0, 0)
+        self.spi = SpiDev(0, 0)
 
     def digital_write(self, pin, value):
         return GPIO.output(pin, value)
